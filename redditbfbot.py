@@ -43,7 +43,7 @@ def compileComment(comment):
                     charlist.insert(k, chr(cells[cellptr]))
                     k += 1
                except ValueError:
-                    flag = 1
+                    flag = True
           
           if comment[i] == '[':
                #if were done looping, skip past the loop, without executing in between chars
@@ -82,8 +82,8 @@ def compileComment(comment):
           #keeps track of which char we're on
           i += 1
           
-     if flag:
-          output = "1"
+     if flag == True:
+          output = "Some output invalid, could not compile program. Sorry :("
           
      output = "".join(charlist)
      return output
